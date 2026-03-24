@@ -1,0 +1,36 @@
+###############################################################
+# terraform.tfvars - Fill in your values before running
+# IMPORTANT: Never commit this file to Git (add to .gitignore)
+###############################################################
+
+aws_region   = "us-east-1"
+project_name = "project"
+
+# Networking
+vpc_cidr             = "10.0.0.0/16"
+availability_zones   = ["us-east-1a", "us-east-1b"]
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.3.0/24", "10.0.4.0/24"]
+db_subnet_cidrs      = ["10.0.5.0/24", "10.0.6.0/24"]
+
+# Your public IP - find it at https://checkip.amazonaws.com
+my_ip = "YOUR_PUBLIC_IP/32"  # e.g. "203.0.113.5/32"
+
+# EC2
+key_pair_name = "awsproject"
+ami_id        = "ami-0c7217cdde317cfec"  # Ubuntu 24.04 LTS us-east-1
+instance_type = "t3.micro"
+
+# RDS
+db_name           = "appdb"
+db_username       = "admin"
+db_password       = "YourStrongPassword123!"  # Change this!
+db_instance_class = "db.t4g.micro"
+
+# Domain - your registered domain name
+domain_name = "yourdomain.com"  # e.g. "modimastan720.com"
+
+# Path to your .pem key file (downloaded when you created EC2 key pair)
+# Windows example: "C:/Users/YourName/Downloads/awsproject.pem"
+# Linux/Mac example: "~/.ssh/awsproject.pem"
+private_key_path = "~/.ssh/awsproject.pem"
